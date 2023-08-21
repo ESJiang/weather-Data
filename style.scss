@@ -11,32 +11,12 @@ body {
     max-width: 600px;
     border-radius: 5px;
     padding: 20px;
-    form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-        font-size: 18px;
-        input[type="text"] {
-            padding: 10px;
-            border: none;
-            outline: none;
-            width: 60%;
-        }
 
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            outline: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            &:hover {
-                background-color: #0062cc;
-            }
-        }
+    input[type="text"] {
+        padding: 10px;
+        border: none;
+        outline: none;
+        width: 60%;
     }
 
     .icon img {

@@ -1,12 +1,10 @@
 const apikey = "46f80a02ecae410460d59960ded6e1c6",
     city = document.getElementById("city-input"),
-    weatherData = document.getElementById("weather-data"),
-    formEl = document.querySelector("form");
+    weatherData = document.getElementById("weather-data");
 
-async function getWeather(city) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+async function getWeather() {
     try {
-        const response = await axios.get(url);
+        const response = await axios.get(`//api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apikey}&units=metric`);
         const data = response.data;
         if (response.status !== 200) throw new Error("Network response error");
         else {
@@ -23,12 +21,7 @@ async function getWeather(city) {
         weatherData.querySelector(".details").innerHTML = "";
         weatherData.querySelector(".temperature").textContent = "";
         weatherData.querySelector(".description").textContent = "";
-        formEl.reset();
     }
 }
-
-formEl.addEventListener("submit", e => {
-    e.preventDefault();
-    const cityValue = city.value;
-    getWeather(cityValue);
-});
+city.focus();
+city.addEventListener("input", getWeather);
